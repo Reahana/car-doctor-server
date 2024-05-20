@@ -41,17 +41,7 @@ const verifyJWT = async (req, res, next) => {
                 req.decoded = decoded;
                 next();
     })
-    // const token = req.cookies?.token;
-    // if (!token) {
-    //     return res.status(401).send({ message: 'unauthorized access' })
-    // }
-    // jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, decoded) => {
-    //     if (err) {
-    //         return res.status(401).send({ message: 'unauthorized access' })
-    //     }
-    //     req.user = decoded;
-    //     next();
-    // })
+    
 }
 
 
@@ -76,12 +66,7 @@ async function run() {
             console.log(token);
             res.send({token})
 
-            // res
-            //     .cookie('token', token, {
-            //         httpOnly: true,
-            //         secure: false
-            //     })
-            //     .send({ success: true })
+       
         })
 
 
